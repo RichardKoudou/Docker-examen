@@ -68,7 +68,7 @@ docker-compose down
 git checkout dev
 ```
 
-2. Construire les images Docker
+- Construire les images Docker
 ```bash
 docker-compose build
 ```
