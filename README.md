@@ -87,7 +87,7 @@ docker-compose down
 
 - Se placer sur la branche dev
 ```bash
-git checkout postgre-sql
+git checkout Postgre
 ```
 
 - Construire les images Docker
