@@ -24,46 +24,46 @@ L'application permet de :
 
 ### 1.Conteneurisation de l'application
 
-- Construire l'image Docker pour l'application PHP
+1. Construire l'image Docker pour l'application PHP
 ```bash
 docker build -t gestion_produits_php:latest -f Dockerfile .
 ```
 
-- Construire l'image Docker pour la base de données MySQL
+2. Construire l'image Docker pour la base de données MySQL
 ```bash
 docker build -t gestion_produits_mysql:latest -f Dockerfile-mysql .
 ```
 
-- Exécuter le conteneur MySQL
+3. Exécuter le conteneur MySQL
 ```bash
 docker run --name gestion_produits_mysql -e MYSQL_ROOT_PASSWORD=root -d gestion_produits_mysql:latest
 ```
 
-- Exécuter le conteneur PHP et le lier au conteneur MySQL
+4. Exécuter le conteneur PHP et le lier au conteneur MySQL
 ```bash
 docker run --name gestion_produits_php --link gestion_produits_mysql:db -p 80:80 -d gestion_produits_php:latest
 ```
 
 ### 2. Mise en place de Docker Compose
 
-- Construire les images Docker
+1. Construire les images Docker
 ```bash
 docker-compose build
 ```
 
-- Exécuter les conteneurs
+2. Exécuter les conteneurs
 ```bash
 docker-compose up -d
 ```
 
-- Arrêter les conteneurs
+3. Arrêter les conteneurs
 ```bash
 docker-compose down
 ```
 
 ### 3. Version Dev: mise en place de la plateforme
 
-- Se placer sur la branche dev
+1. se placer sur la branche dev
 ```bash
 git checkout dev
 ```
@@ -73,34 +73,34 @@ git checkout dev
 docker-compose build
 ```
 
-- Exécuter les conteneurs
+3. Exécuter les conteneurs
 ```bash
 docker-compose up -d
 ```
 
-- Arrêter les conteneurs
+4. Arrêter les conteneurs
 ```bash
 docker-compose down
 ```
 
 ### 4. Version PostgreSql 
 
-- Se placer sur la branche dev
+1. se placer sur la branche dev
 ```bash
 git checkout postgre-sql
 ```
 
-- Construire les images Docker
+2. Construire les images Docker
 ```bash
 docker-compose build
 ```
 
-- Exécuter les conteneurs
+3. Exécuter les conteneurs
 ```bash
 docker-compose up -d
 ```
 
-- Arrêter les conteneurs
+4. Arrêter les conteneurs
 ```bash
 docker-compose down
 ```
