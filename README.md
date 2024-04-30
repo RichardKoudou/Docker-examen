@@ -24,83 +24,83 @@ L'application permet de :
 
 ### 1.Conteneurisation de l'application
 
-1. Construire l'image Docker pour l'application PHP
+- Construire l'image Docker pour l'application PHP
 ```bash
 docker build -t gestion_produits_php:latest -f Dockerfile .
 ```
 
-2. Construire l'image Docker pour la base de données MySQL
+- Construire l'image Docker pour la base de données MySQL
 ```bash
 docker build -t gestion_produits_mysql:latest -f Dockerfile-mysql .
 ```
 
-3. Exécuter le conteneur MySQL
+- Exécuter le conteneur MySQL
 ```bash
 docker run --name gestion_produits_mysql -e MYSQL_ROOT_PASSWORD=root -d gestion_produits_mysql:latest
 ```
 
-4. Exécuter le conteneur PHP et le lier au conteneur MySQL
+- Exécuter le conteneur PHP et le lier au conteneur MySQL
 ```bash
 docker run --name gestion_produits_php --link gestion_produits_mysql:db -p 80:80 -d gestion_produits_php:latest
 ```
 
 ### 2. Mise en place de Docker Compose
 
-1. Construire les images Docker
+- Construire les images Docker
 ```bash
 docker-compose build
 ```
 
-2. Exécuter les conteneurs
+- Exécuter les conteneurs
 ```bash
 docker-compose up -d
 ```
 
-3. Arrêter les conteneurs
+- Arrêter les conteneurs
 ```bash
 docker-compose down
 ```
 
 ### 3. Version Dev: mise en place de la plateforme
 
-1. se placer sur la branche dev
+- Se placer sur la branche dev
 ```bash
 git checkout dev
 ```
 
-2. Construire les images Docker
+- Construire les images Docker
 ```bash
 docker-compose build
 ```
 
-3. Exécuter les conteneurs
+- Exécuter les conteneurs
 ```bash
 docker-compose up -d
 ```
 
-4. Arrêter les conteneurs
+- Arrêter les conteneurs
 ```bash
 docker-compose down
 ```
 
 ### 4. Version PostgreSql 
 
-1. se placer sur la branche dev
+- Se placer sur la branche dev
 ```bash
-git checkout postgre-sql
+git checkout Postgre
 ```
 
-2. Construire les images Docker
+- Construire les images Docker
 ```bash
 docker-compose build
 ```
 
-3. Exécuter les conteneurs
+- Exécuter les conteneurs
 ```bash
 docker-compose up -d
 ```
 
-4. Arrêter les conteneurs
+- Arrêter les conteneurs
 ```bash
 docker-compose down
 ```
